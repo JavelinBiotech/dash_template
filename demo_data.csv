@@ -1,0 +1,6 @@
+"drug_id","name","canonical_smiles","molecular_weight"
+4,"1-Aminocyclopropanecarboxylic Acid","NC1(C(=O)O)CC1",101.11
+17,"7-Methylthiomethylpaclitaxel","CSCO[C@H]1C[C@H]2OC[C@@]2(OC(C)=O)C2[C@H](OCc3ccccc3)[C@]3(O)CC(OC(=O)[C@H](O)[C@@H](NC(=O)c4ccccc4)c4ccccc4)C(C)=C([C@@H](OC(C)=O)C(=O)[C@@]21C)C3(C)C",900.06
+18,"8-Methoxypsoralen","COc1c2occc2cc2ccc(=O)oc12",216.19
+20,"9-Aminocamptothecin","CC[C@@]1(O)C(=O)OCc2c1cc1n(c2=O)Cc2cc3c(N)cccc3nc2-1",363.37
+25,"Abp-700","COC(=O)C1(OC(=O)c2cncn2[C@H](C)c2ccccc2)CC1",314.34
