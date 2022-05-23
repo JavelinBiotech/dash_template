@@ -1,16 +1,14 @@
-from dash import Dash, html, dcc, dash_table
-from mmap import PAGESIZE
+from dash import html, dash_table, dcc
 import plotly.express as px
 import pandas as pd
 import dash_bootstrap_components as dbc
-
-
 
 df = pd.read_csv('demo_data.csv')
 
 fig = px.bar(df, x="name", y="molecular_weight")
 # df = pd.DataFrame()
-table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns])
+table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns],
+                                style_table={'height': 'auto', 'overflowY': 'auto'})
 
 smile_input = html.Div(
         [
@@ -28,7 +26,7 @@ smile_input = html.Div(
         ],
         className="mb-3",
     )
-    
+
 form = dbc.FormFloating(
         [
             smile_input
@@ -43,9 +41,9 @@ layout_1 = html.Div([
 
         html.Div(table),
 
-        html.Div(children='''
-        Dash: A web application framework for your data.
-        '''),
+        html.Br(),
+
+        html.H2(children='Molecular Weights'),
 
         dcc.Graph(
         id='example-graph',
@@ -60,7 +58,7 @@ layout_1 = html.Div([
         html.Br(),
 
         html.H2('Molecular Structures'),#'SMILES'),
-        
+
         html.Div(
             dbc.Col(dbc.CardImg(
 				id='smile-string-image'),
@@ -69,7 +67,7 @@ layout_1 = html.Div([
 
         html.H3("Generated Descriptors"),
 		html.Div(id='generated-descriptors'),
-    
+
     ])
-    
+
 ])

@@ -1,7 +1,8 @@
-from dash import Dash, html, dcc, dash_table
-from mmap import PAGESIZE
-import plotly.express as px
-import pandas as pd
+"""
+Displays main HTML layout of application
+"""
+
+from dash import html
 import dash_bootstrap_components as dbc
 from views import page1
 
@@ -40,11 +41,8 @@ def nav_bar():
 	"""
 	navbar = html.Div(
 	[
-		#html.H4("Javelin Apps", className="display-10",style={'textAlign':'center'}),
-		#html.Div([dcc.Graph(figure=fig_javelin_logo)]),
-		#html.Img(src=image_filename, height="30px"),
-		#html.Div([html.Img(src='data:image/png;base64,{}'.format(encoded_logo))]),
-		html.Div([html.Img(src=app.get_asset_url(image_filename), width="200px", style={'align': 'center'})]),
+		html.Div([html.Img(src=app.get_asset_url(image_filename),
+							width="200px", style={'align': 'center'})]),
 		html.Hr(),
 		dbc.Nav(
 			[
@@ -60,7 +58,7 @@ def nav_bar():
 		),
 	],
 	style=NAVBAR_STYLE,
-	)  
+	)
 	return navbar
 
 
@@ -74,4 +72,3 @@ layout5 = html.Div('Page 5')
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-

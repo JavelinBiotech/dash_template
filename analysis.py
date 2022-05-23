@@ -3,8 +3,6 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem import Descriptors
 
-
-
 def generate_df(smile):
     data = {'smiles': [smile],
            }
@@ -39,7 +37,7 @@ def generate_2Ddescriptors(df, mol):
     df['SlogP_VSA10'] = mol.apply(Descriptors.SlogP_VSA10) # Bin 0 SlogP (-10, -0.40)  #3
     df['SlogP_VSA2'] = mol.apply(Descriptors.SlogP_VSA2 ) # Bin 2 SlogP (-0.20, 0.00]) # 6
 
-    # Subdivided Surgace Areas
+    # Subdivided Surface Areas
     df['SlogP_VSA1'] = mol.apply(Descriptors.SlogP_VSA1)
     df['SlogP_VSA2'] = mol.apply(Descriptors.SlogP_VSA2)
     df['SlogP_VSA3'] = mol.apply(Descriptors.SlogP_VSA3)
@@ -51,7 +49,7 @@ def generate_2Ddescriptors(df, mol):
     df['SMR_VSA3'] = mol.apply(Descriptors.SMR_VSA3)
     df['SMR_VSA5'] = mol.apply(Descriptors.SMR_VSA5)
 
-    # Partial Charge Descriptors, Not the same as Paper, doesn't denonte charge
+    # Partial Charge Descriptors
     df['PEOE_VSA1'] = mol.apply(Descriptors.PEOE_VSA1)
     df['PEOE_VSA2'] = mol.apply(Descriptors.PEOE_VSA2)
     df['PEOE_VSA4'] = mol.apply(Descriptors.PEOE_VSA4)

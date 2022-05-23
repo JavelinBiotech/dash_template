@@ -1,5 +1,5 @@
 import pickle
-import app
+
 # AWS credentials
 # AWS Lambda or whatever
 # smiles needs to be imported or taken from the app.py -> pushed to AWS Sagemaker Endpoint
