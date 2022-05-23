@@ -10,5 +10,5 @@ import app
 
 # predicted value gets sent back to the applicaation and then the result is displayed 
 
-model = ampl.load_model('location')
+# Send predicted data 
 

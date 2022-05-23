@@ -11,28 +11,27 @@ import PIL
 
 import analysis
 
-# Single STRING and QSAR Prediction Input Generation
+# Single STRING Input Generation
 @app.callback(
-    # Output('user-input-output', 'children'),
+    # Output('user-input-output', 'children'), # THIS CAN BE WHERE THE MODEL GOES
     Output('generated-descriptors', 'children'),
     Output('smile-string-image', 'src'),
     Input('submit-smile', 'n_clicks'),
     State('input_smiles', 'value'),
 )
 def show_smile_string(n_clicks, value):
-    print(n_clicks)
+    # print(n_clicks)
 
     smile_df = analysis.generate_df(value)
     mol = analysis.generate_mol(smile_df)    
-    print(smile_df)
+    # print(smile_df)
+
     result_list = [Chem.MolFromSmiles(smiles) for smiles in smile_df.smiles]
     img = MolsToGridImage(result_list)
     buffered = BytesIO()
     img.save(buffered, format="PNG")
     encoded_image = base64.b64encode(buffered.getvalue())
     src_str = 'data:image/png;base64,{}'.format(encoded_image.decode())
-
-
 
     complete_df = analysis.generate_2Ddescriptors(smile_df, mol)
     # Can add condition if user != Javelin then rename the columns otherwise, pass
@@ -42,5 +41,6 @@ def show_smile_string(n_clicks, value):
 								style_table={'height': 'auto', 'overflowY': 'auto'}
 								)
 
+    # MODEL on AWS predict -> send smile string to AWS, AWS loads model and generates prediction, predicted result is sent back to the application
 
     return des_table, src_str
