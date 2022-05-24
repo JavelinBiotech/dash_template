@@ -15,12 +15,12 @@ smile_input = html.Div(
             dbc.Label("SMILE Input"),
             dbc.Input(
                 id="input_smiles",
-                value='OC(=O)CC1=CC=CC=C1NC1=C(Cl)C=CC=C1Cl',
+                value='O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl',
                 type="str",
                 style={'color': 'black'}
             ),
             dbc.FormText(
-            "Sample SMILE String: OC(=O)CC1=CC=CC=C1NC1=C(Cl)C=CC=C1Cl",
+            "Sample SMILE String; Diclofenac: O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl",
             color="secondary",
         )
         ],
