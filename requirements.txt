@@ -16,9 +16,12 @@ pandas==1.4.2
 Pillow==9.1.0
 plotly==5.7.0
 python-dateutil==2.8.2
+python-dotenv==0.19.0
+
 pytz==2022.1
 rdkit-pypi==2022.3.2.1
 six==1.16.0
+SQLAlchemy==1.4.22
 tenacity==8.0.1
 Werkzeug==2.1.2
 zipp==3.8.0

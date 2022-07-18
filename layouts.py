@@ -4,7 +4,7 @@ Displays main HTML layout of application
 
 from dash import html
 import dash_bootstrap_components as dbc
-from views import page1
+from views import page1, page2
 
 from app import app
 
@@ -63,8 +63,9 @@ def nav_bar():
 
 
 layout1 = page1.layout_1
+layout2 = page2.layout_2
 
-layout2 = html.Div('Page 2')
+# layout2 = html.Div('Page 2')
 layout3 = html.Div('Page 3')
 layout4 = html.Div('Page 4')
 layout5 = html.Div('Page 5')
