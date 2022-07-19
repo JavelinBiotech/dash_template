@@ -2,9 +2,9 @@
 Displays main HTML layout of application
 """
 
-from dash import html
+from dash import html, dcc
 import dash_bootstrap_components as dbc
-from views import page1
+from pages import page1, page2
 
 from app import app
 
@@ -62,12 +62,21 @@ def nav_bar():
 	return navbar
 
 
+url_bar_and_content_div = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
 layout1 = page1.layout_1
+layout2 = page2.layout_2
 
-layout2 = html.Div('Page 2')
+# layout2 = html.Div('Page 2')
 layout3 = html.Div('Page 3')
 layout4 = html.Div('Page 4')
 layout5 = html.Div('Page 5')
+
+app.validation_layout = html.Div(
+	[url_bar_and_content_div, layout1, layout2, layout3, layout4, layout5]
+)
 
 
 if __name__ == '__main__':
