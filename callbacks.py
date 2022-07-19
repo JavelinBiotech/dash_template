@@ -1,1 +1,1 @@
-from app_callbacks import smile_callback
+from app_callbacks import smile_callback, upload_callback
