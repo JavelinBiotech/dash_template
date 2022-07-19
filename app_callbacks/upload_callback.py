@@ -1,3 +1,10 @@
+"""
+Resource guide for CRUD App on Dash https://www.youtube.com/watch?v=Mf3s0P4aVKw&
+This callback listens for upload data and stores that data as a dcc (dash core component) store and sends that data to the upload callback.
+The data is then sent to the database and appended to the correct table and the call back retreives that updated table
+"""
+
+
 from app import app, db
 import base64
 import datetime
