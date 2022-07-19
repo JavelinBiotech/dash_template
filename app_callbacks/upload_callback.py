@@ -71,7 +71,7 @@ def df_to_db(n_clicks, data):
         # print(data)
         df = pd.DataFrame(data)
         df.to_sql("sample_drug_data", con=db.engine,
-                                  if_exists='replace', index=False)
+                                  if_exists='append', index=False)
         print('Success!')
         
         updated = pd.read_sql_table('sample_drug_data', con=db.engine)
