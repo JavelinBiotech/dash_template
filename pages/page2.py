@@ -15,7 +15,8 @@ upload_card = dcc.Upload(
     id='upload-data',
     children=html.Div([
         'Drag and Drop or ',
-        html.A('Select Files')
+        html.A('Select Files'),
+        dcc.Store(id='stored-data')
     ]),
     style={
         'width': '100%',

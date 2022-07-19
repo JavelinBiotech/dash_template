@@ -66,7 +66,7 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
               [State('stored-data', 'data')]
 )
 def df_to_db(n_clicks, data):
-    if n_clicks > 0:
+    if n_clicks >= 1:
         print('clicked')
         # print(data)
         df = pd.DataFrame(data)
@@ -84,3 +84,5 @@ def df_to_db(n_clicks, data):
                 style_table={'height': 'auto', 'overflowY': 'auto'}
             )
         ])]
+    else:
+        return [html.Div()]
