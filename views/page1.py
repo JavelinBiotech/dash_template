@@ -9,7 +9,7 @@ fig = px.bar(df, x="name", y="molecular_weight")
 # df = pd.DataFrame()
 table = dash_table.DataTable(df.to_dict('records'), [{"name": i, "id": i} for i in df.columns],
                                 style_table={'height': 'auto', 'overflowY': 'auto'})
-#Div for smile input
+
 smile_input = html.Div(
         [
             dbc.Label("SMILE Input"),
