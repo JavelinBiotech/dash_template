@@ -4,7 +4,7 @@ import pandas as pd
 import dash_bootstrap_components as dbc
 
 #Connect Database
-from database import connect, export
+from database import connect
 
 df = connect.load_data()
 
@@ -31,43 +31,14 @@ upload_card = dcc.Upload(
     multiple=True
 ),
 
-# received = html.Div([
-#     # html.Div([
-#     #     dcc.Input(
-#     #         id='adding-rows-name',
-#     #         placeholder='Enter a column name...',
-#     #         value='',
-#     #         style={'padding': 10}
-#     #     ),
-#     #     html.Button('Add Column', id='adding-columns-button', n_clicks=0)
-#     # ], style={'height': 50}),
-
-#     # activated once/week or when page refreshed
-#     dcc.Interval(id='interval_pg', interval=86400000*7, n_intervals=0),
-#     html.Div(id='postgres_datatable'),
-
-#     # # html.Button('Add Row', id='editing-rows-button', n_clicks=0),
-#     # html.Button('Save to PostgreSQL', id='save_to_postgres', n_clicks=0),
-
-#     # Create notification when saving to excel
-#     html.Div(id='placeholder', children=[]),
-#     # dcc.Store(id="store", data=0),
-#     # dcc.Store(id="store", data=0),
-
-#     dcc.Interval(id='interval', interval=1000),
-
-#     # Graph results
-#     # dcc.Graph(id='my_graph')
-
-# ])
 
 layout_2 = html.Div(['Hello',
                     html.Div(upload_card),
                     html.Div(id='output-data-upload'),
-                    # dcc.Store(id="stored-data", data=None), # placeholder # need to handle error
+
                     dbc.Button('Save to PostgreSQL',
                                 id='save_to_postgres', n_clicks=0),
-                    # html.Div(table),
+
                     html.Div(id='output-div'),
-                    # html.Div(received)
+
  ])
